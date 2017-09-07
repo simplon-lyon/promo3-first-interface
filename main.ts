@@ -1,5 +1,8 @@
+interface RenderFunc {
+    render();
+}
 
-class Tree {
+class Tree implements RenderFunc {
     height: number;
     species: string;
     color: string;
@@ -24,12 +27,37 @@ class Tree {
     }
 }
 
-let trees: Tree[] = [];
+// Create an Animal class with a render method
+// wich display the emoji associated with the species.
+class Animal {
+    species: string;
+    age: number;
+    hasFur: boolean;
+    constructor(species: string, age: number) {
+        this.species = species;
+        this.age = age;
+    }
+    render() {
+        let emoji = this.species;
+        if (emoji === "goat") {
+            emoji = "🐐";
+        } else if (emoji == "leopard") {
+            emoji = "🐆";
+        }
+        console.log(emoji + " " + this.age + " year old");
+    }
+}
 
-trees.push(new Tree(2, "spruce", "dark green", 3));
-trees.push(new Tree(3, "oak", "orange", 10));
-trees.push(new Tree(5, "palm", "green", 5));
+let objects: RenderFunc[] = [];
 
-for (let t of trees) {
-    t.render();
+objects.push(new Tree(2, "spruce", "dark green", 3));
+objects.push(new Tree(3, "oak", "orange", 10));
+objects.push(new Tree(5, "palm", "green", 5));
+
+objects.push(new Animal("goat", 2));
+objects.push(new Animal("goat", 3));
+objects.push(new Animal("leopard", 1));
+
+for (let o of objects) {
+    o.render();
 }
