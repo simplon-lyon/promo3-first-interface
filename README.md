@@ -1,7 +1,11 @@
 # First Interface
 A project to learn about Interface using Typescript.
 
+Doc: https://www.typescriptlang.org/docs/handbook/interfaces.html
+
 ## Example
+
+Create a file `example.ts` with the following script:
 
 ```typescript
 // Declare a Fighter interface. Any object with the methods:
@@ -34,8 +38,14 @@ class Personne {
 }
 
 let n = new Ninja();
-let k = new Knight();
-
+// Ninja is a fighter and can assign to f.
 let f :Fighter = n;
+
+let k = new Knight();
+// Knight is a fighter and can be assign to f. 
 f = k;
+
+let p = new Person();
+// Person is not a fighter and Typescript will throw an error.
+f = p;
 ```
