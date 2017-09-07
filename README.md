@@ -3,7 +3,7 @@ A project to learn about Interface using Typescript.
 
 Doc: https://www.typescriptlang.org/docs/handbook/interfaces.html
 
-## Example
+## Example
 
 Create a file `example.ts` with the following script:
 
